@@ -1,1 +1,15 @@
-#not yet ready  in feature#2
+name: workflow_practice
+on:
+    push:
+      branches: [ "main" ]
+    pull_request:
+      branches: [ "main" ]
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: nodejs_setup
+              uses: actions/checkout@v4
+            
+            - name: install_dependencies
+              run: npm ci
